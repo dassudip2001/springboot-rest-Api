@@ -10,11 +10,12 @@ public class User {
     @Id
     @GeneratedValue   
     private Long id;
-    @Column(unique=true)
-
+   
+    
+    @Column(name = "username",  unique = true)
     private String username;
     private String name;
-    @Column(unique=true)
+    @Column(name = "email",  unique = true)
 
     private String email;
     private String department;
