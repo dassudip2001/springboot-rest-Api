@@ -13,7 +13,6 @@ import com.example.java.full.stack.exception.UserNotFoundException;
 import com.example.java.full.stack.model.User;
 import com.example.java.full.stack.repository.UserRepository;
 
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +32,13 @@ public class UserController {
     // public SomeData getMethodName(@RequestParam String param) {
     //     return new SomeData();
     // }
+    @GetMapping("/findUsername/{username}")
+    public User findByUsername( @PathVariable String username){
+        return userRepository.findByUsername(username);
+    };
+
+    
+
     
     // get api
     @GetMapping("/users")
@@ -76,7 +82,6 @@ public class UserController {
         userRepository.deleteById(id);
         return "successfully delete";
     }
-
-    
+   
     
 }
