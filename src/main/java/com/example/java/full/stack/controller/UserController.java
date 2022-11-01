@@ -13,6 +13,7 @@ import com.example.java.full.stack.exception.UserNotFoundException;
 import com.example.java.full.stack.model.User;
 import com.example.java.full.stack.repository.UserRepository;
 
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class UserController {
     // public SomeData getMethodName(@RequestParam String param) {
     //     return new SomeData();
     // }
-
+    
     // get api
     @GetMapping("/users")
      List<User> getAllUsers(){
@@ -58,6 +59,10 @@ public class UserController {
             user.setUsername(newUser.getUsername());
             user.setEmail(newUser.getEmail());
             user.setName(newUser.getName());
+            user.setAddress(newUser.getAddress());
+            user.setAge(newUser.getAge());
+            user.setDepartment(newUser.getDepartment());
+            user.setSalary(newUser.getSalary());
             return userRepository.save(user);
         });
     }
