@@ -13,6 +13,7 @@ import com.example.java.full.stack.exception.UserNotFoundException;
 import com.example.java.full.stack.model.User;
 import com.example.java.full.stack.repository.UserRepository;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
+
+@CrossOrigin(allowedHeaders = "*",origins = "*")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
