@@ -1,0 +1,11 @@
+version: '3'
+services:
+ spring-boot:
+   image: spring-boot-docker-compose
+   build: 
+     context: ./
+     dockerfile: dockerfile
+   volumes:
+     - /data/spring-boot
+   ports:
+     - "8080:8080"
